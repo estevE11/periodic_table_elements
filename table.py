@@ -29,7 +29,11 @@ def proccess_type(inp):
         inp = "metal·loide"
     elif inp == "lantanoid":
         inp = "lantanoide"
-    elif inp == "solid":
+
+    return inp
+
+def proccess_state(inp):
+    if inp == "solid":
         inp = "sòlid"
     elif inp == "":
         inp = "sintètic"
@@ -37,6 +41,8 @@ def proccess_type(inp):
         inp = "líquid"
 
     return inp
+
+
 
 def printElement3(*args):
     print("new Element(", end="")
@@ -49,7 +55,7 @@ def printElement2(el, name):
 
 
 def printElement(el, name):
-    return 'new Element("' + el['symbol'] + '", ' + str(el['atomicNumber']) + ', "' + proccess_type(el['groupBlock']) + '", "' + name + '", ' + proccess_mass(el['atomicMass']) + ', "' + el['electronicConfiguration'] + '", "' + el['standardState'] + '"),\n'
+    return 'new Element("' + el['symbol'] + '", ' + str(el['atomicNumber']) + ', "' + proccess_type(el['groupBlock']) + '", "' + name + '", ' + proccess_mass(el['atomicMass']) + ', "' + el['electronicConfiguration'] + '", "' + proccess_state(el['standardState']) + '"),\n'
 
 req = "https://neelpatel05.pythonanywhere.com"
 r = requests.get(req)
