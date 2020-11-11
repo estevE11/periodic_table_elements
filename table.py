@@ -13,7 +13,7 @@ def proccess_type(inp):
         inp = "no metàlic"
     elif inp == "noble gas":
         inp = "gas noble"
-    elif inp == "post-transition metal"
+    elif inp == "post-transition metal":
         inp = "metall post-transició"
     elif inp == "transition metal":
         inp = "metall de transició"
