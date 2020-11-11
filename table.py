@@ -61,7 +61,7 @@ req = "https://neelpatel05.pythonanywhere.com"
 r = requests.get(req)
 if r.status_code == 200:
     obj = r.json()
-    f = open("names_cat.csv", "r")
+    f = open("names_cat.csv", "r", encoding="utf-8")
     text = f.read()
     names = text.split(",")
     
@@ -69,7 +69,7 @@ if r.status_code == 200:
     for i, it in enumerate(obj):
         res += printElement(it, names[i])
 
-    f = open("result.txt", "w")
+    f = open("result.txt", "w", encoding="utf-8")
     f.write(res)
     f.close()
 else:
