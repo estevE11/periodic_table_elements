@@ -6,6 +6,36 @@ def proccess_mass(inp):
     return str(inp)
 
 def proccess_type(inp):
+
+    inp = str(inp)
+
+    if inp == "nonmetal":
+        inp = "no metàlic"
+    elif inp == "noble gas":
+        inp = "gas noble"
+    elif inp == "post-transition metal"
+        inp = "metall post-transició"
+    elif inp == "transition metal":
+        inp = "metall de transició"
+    elif inp == "actinoid":
+        inp = "actinoide"
+    elif inp == "alkaline earth metal":
+        inp = "metall alcalino-terrós"
+    elif inp == "alkali metal":
+        inp = "metall alcalí"
+    elif inp == "halogen":
+        inp = "halògen"
+    elif inp == "metalloid":
+        inp = "metal·loide"
+    elif inp == "lantanoid":
+        inp = "lantanoide"
+    elif inp == "solid":
+        inp = "sòlid"
+    elif inp == "":
+        inp = "sintètic"
+    elif inp == "liquid":
+        inp = "líquid"
+
     return inp
 
 def printElement3(*args):
