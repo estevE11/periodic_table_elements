@@ -2,8 +2,8 @@ import requests
 
 def proccess_mass(inp):
     if len(inp) == 1:
-        return inp[0]
-    return inp
+        return str(inp[0])
+    return str(inp)
 
 def proccess_type(inp):
     return inp
@@ -18,8 +18,8 @@ def printElement2(el, name):
     printElement3(name, "caca")
 
 
-def printElement(el):
-    print("new Element(" + el['symbol'] + '')
+def printElement(el, name):
+    return 'new Element("' + el['symbol'] + '", ' + str(el['atomicNumber']) + ', "' + proccess_type(el['groupBlock']) + '", "' + name + '", ' + proccess_mass(el['atomicMass']) + ', "' + el['electronicConfiguration'] + '", "' + el['standardState'] + '"),\n'
 
 req = "https://neelpatel05.pythonanywhere.com"
 r = requests.get(req)
@@ -28,7 +28,13 @@ if r.status_code == 200:
     f = open("names_cat.csv", "r")
     text = f.read()
     names = text.split(",")
+    
+    res = ''
     for i, it in enumerate(obj):
-        printElement(it, names[i])
+        res += printElement(it, names[i])
+
+    f = open("result.txt", "w")
+    f.write(res)
+    f.close()
 else:
     print("Error " + str(r.status_code))
