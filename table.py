@@ -55,7 +55,7 @@ def printElement2(el, name):
 
 
 def printElement(el, name):
-    return 'new Element("' + el['symbol'] + '", ' + str(el['atomicNumber']) + ', "' + proccess_type(el['groupBlock']) + '", "' + name + '", ' + proccess_mass(el['atomicMass']) + ', "' + el['electronicConfiguration'] + '", "' + proccess_state(el['standardState']) + '"),\n'
+    return 'new Element("' + el['symbol'] + '", ' + str(el['atomicNumber']) + ', "' + proccess_type(el['groupBlock']) + '", "' + name + '", "' + proccess_mass(el['atomicMass']) + '", "' + el['electronicConfiguration'] + '", "' + proccess_state(el['standardState']) + '"),\n'
 
 req = "https://neelpatel05.pythonanywhere.com"
 r = requests.get(req)
